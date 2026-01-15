@@ -95,4 +95,6 @@
 
 ## 发布（维护者）
 
-打 tag（例如 `v0.1.0`）推送到远端；CI `.github/workflows/release-proxy.yml` 自动构建并创建 Release 附件。
+- 方式1：打 tag（例如 `v0.1.0`）并 push；CI `.github/workflows/release-proxy.yml` 自动构建并创建 Release + 附件。
+- 方式2：Actions 手动运行 `Release Augment-BYOK-Proxy`，可选传入 `tag`；留空默认使用 `Cargo.toml` 版本生成 `v{version}`。
+- 方式3：GitHub UI 创建 Release（`release.created`）也会触发同一工作流上传附件。
